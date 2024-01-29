@@ -101,4 +101,3 @@ This script is designed to preprocess paired-end sequencing data, perform dedupl
 ```bash
 ./nothmodifying_split_trim.sh <working_directory> <R1_fastq> <R2_fastq> <output_prefix>
 ```
-

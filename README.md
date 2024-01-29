@@ -101,3 +101,46 @@ This script is designed to preprocess paired-end sequencing data, perform dedupl
 ```bash
 ./nothmodifying_split_trim.sh <working_directory> <R1_fastq> <R2_fastq> <output_prefix>
 ```
+
+
+# Fastq File Counting Script for the second script called (fq_count.sh)
+
+This script is designed to perform counting of reads in various stages of preprocessing for paired-end sequencing data. It calculates the number of reads in the original, deduplicated, and trimmed paired and unpaired files, providing insights into the data quality at different processing steps.
+
+## Inputs
+- `$1`: Working directory
+- `$2`: Path to the R1 fastq file
+- `$3`: Path to the R2 fastq file
+- `$4`: Prefix for output files
+
+## Variables
+- The script utilizes various file paths and commands to perform read counting in different preprocessing steps.
+
+## Output
+- The script generates an output file in the `QC` directory named `<prefix>_fastq-count.txt` in a tab-delimited format. The file contains read counts for the original, deduplicated, trimmed-pair, and trimmed-unpaired files.
+
+## Workflow Steps
+
+### Pre-processing
+1. **Original Read Count**: Counts the number of reads in the original fastq files.
+2. **Deduplication**: Counts the number of reads after deduplication.
+3. **Trimmed Pair**: Counts the number of reads in the trimmed paired files.
+4. **Trimmed Unpair**: Counts the number of reads in the trimmed unpaired files.
+
+## Usage
+```bash
+./fq_count.sh <working_directory> <R1_fastq> <R2_fastq> <output_prefix>
+```
+
+## Example Output
+```
+<output_prefix>   original   <original_read_count>
+<output_prefix>   dedup      <deduplicated_read_count>
+<output_prefix>   trimmed-pair   <trimmed_paired_read_count>
+<output_prefix>   trimmed-unpair   <trimmed_unpaired_read_count>
+```
+
+## Notes
+- Review and modify the paths and variables in the script to match your system.
+- This script provides a quick summary of read counts at different stages of preprocessing.
+

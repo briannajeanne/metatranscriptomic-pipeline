@@ -140,7 +140,62 @@ This script is designed to perform counting of reads in various stages of prepro
 <output_prefix>   trimmed-unpair   <trimmed_unpaired_read_count>
 ```
 
+
 ## Notes
 - Review and modify the paths and variables in the script to match your system.
 - This script provides a quick summary of read counts at different stages of preprocessing.
+
+
+---
+
+# Kraken Taxonomic Summary Script for the third script called (kraken_summary_levels.sh)
+
+This script is designed to generate taxonomic summary files based on Kraken2 and Bracken output. It combines information from both tools to provide a comprehensive overview of taxonomic assignments at different levels. The script also reports the assigned and unassigned reads.
+
+## Inputs
+- `$1`: Working directory
+- `$2`: Path to the R1 fastq file
+- `$3`: Path to the R2 fastq file
+- `$4`: Prefix for output files
+
+## Variables
+- The script uses various variables related to Kraken and Bracken reports.
+
+## Output
+- The script generates several output files:
+  - `kr_reports_modified/<prefix>_to-combine-brreport.tab`: Bracken report in a format suitable for combining.
+  - `kr_reports_modified/<prefix>_to-combine-krreport.tab`: Kraken2 report in a format suitable for combining.
+  - `QC/<prefix>_combined-taxreads.tab`: Combined taxonomic reads at different levels.
+  - `QC/<prefix>_kr-assigned.tab`: Assigned and unassigned reads in Kraken2.
+
+## Workflow Steps
+
+### Kraken and Bracken Reports Combination
+1. **Bracken Report Formatting**: Prepares the Bracken report for combination.
+2. **Kraken2 Report Formatting**: Prepares the Kraken2 report for combination.
+
+### Combined Taxonomic Reads
+3. **Taxonomic Level Assignment**: Determines the taxonomic level at which reads are being assigned.
+4. **Combined Taxonomic Reads**: Combines taxonomic reads at different levels.
+
+### Assigned/Unassigned Reads
+5. **Assigned and Unassigned Reads in Kraken2**: Reports the number of reads assigned and unassigned in Kraken2.
+
+## Usage
+```bash
+./kraken_summary_levels.sh <working_directory> <R1_fastq> <R2_fastq> <output_prefix>
+```
+
+## Example Output
+- `kr_reports_modified/<prefix>_to-combine-brreport.tab`
+- `kr_reports_modified/<prefix>_to-combine-krreport.tab`
+- `QC/<prefix>_combined-taxreads.tab`
+- `QC/<prefix>_kr-assigned.tab`
+
+## Notes
+- Review and modify the paths and variables in the script to match your system.
+- This script provides a detailed taxonomic summary using both Kraken2 and Bracken outputs.
+
+
+
 

@@ -45,7 +45,7 @@ The manifest file should be tab-delimited and contain the following columns:
 
 ---
 
-# Sequencing Data Preprocessing and Taxonomic Classification for the first script called (nothmodifying_split_trim.sh)
+# First script called: Sequencing Data Preprocessing and Taxonomic Classification (nothmodifying_split_trim.sh)
 
 This script is designed to preprocess paired-end sequencing data, perform deduplication, trimming, and taxonomic classification using Kraken2 and Bracken. The script splits the processed data into different taxonomic groups, such as human, bacteria, fungus, virus, COVID, and non-human.
 
@@ -103,7 +103,7 @@ This script is designed to preprocess paired-end sequencing data, perform dedupl
 ```
 
 
-# Fastq File Counting Script for the second script called (fq_count.sh)
+# Second script called: Fastq File Counting Script (fq_count.sh)
 
 This script is designed to perform counting of reads in various stages of preprocessing for paired-end sequencing data. It calculates the number of reads in the original, deduplicated, and trimmed paired and unpaired files, providing insights into the data quality at different processing steps.
 
@@ -148,7 +148,7 @@ This script is designed to perform counting of reads in various stages of prepro
 
 ---
 
-# Kraken Taxonomic Summary Script for the third script called (kraken_summary_levels.sh)
+#Third Script Called: Kraken Taxonomic Summary Script (kraken_summary_levels.sh)
 
 This script is designed to generate taxonomic summary files based on Kraken2 and Bracken output. It combines information from both tools to provide a comprehensive overview of taxonomic assignments at different levels. The script also reports the assigned and unassigned reads.
 

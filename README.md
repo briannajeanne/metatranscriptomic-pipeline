@@ -16,7 +16,7 @@ This shell script is designed to process multiple sets of paired-end sequencing 
 
 ## Usage
 ```bash
-./process_data_workflow.sh <manifest_file> <working_directory>
+./manifesting2_wd.sh <manifest_file> <working_directory>
 ```
 - `<manifest_file>`: Path to the tab-delimited manifest file with columns R1, R2, prefix, and batch.
 - `<working_directory>`: Directory where the data processing will take place.
@@ -42,7 +42,7 @@ The manifest file should be tab-delimited and contain the following columns:
 
 ## Example
 ```bash
-./process_data_workflow.sh my_manifest.txt /path/to/working/directory
+./manifesting2_wd.sh my_manifest.txt /path/to/working/directory
 ```
 
 ## Notes

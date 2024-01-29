@@ -102,18 +102,3 @@ This script is designed to preprocess paired-end sequencing data, perform dedupl
 ./nothmodifying_split_trim.sh <working_directory> <R1_fastq> <R2_fastq> <output_prefix>
 ```
 
-## Notes
-- Review and modify the paths to external tools and databases in the script to match your system.
-- Ensure that taxonomic IDs are accurate for your specific analysis.
-- Additional customization can be done based on specific requirements.
-
-## License
-This script is provided under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to adjust the content based on specific details or additional information you'd like to include in your README.
-
-## Notes
-- Review the scripts in the workflow to ensure they meet the requirements of your specific data processing needs.
-- Verify that the specified conda environment is correctly set up with the required dependencies.

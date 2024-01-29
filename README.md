@@ -199,3 +199,49 @@ This script is designed to generate taxonomic summary files based on Kraken2 and
 
 
 
+#Fourth script called: Kraken and Bracken TaxID Summary Script
+
+This script is designed to generate taxonomic summaries for specific TaxIDs using Kraken2 and Bracken output. It allows users to specify TaxIDs of interest, and the script generates reports with information on read counts at various taxonomic levels for the specified TaxIDs.
+
+## Inputs
+- `$1`: Working directory
+- `$2`: Path to the R1 fastq file
+- `$3`: Path to the R2 fastq file
+- `$4`: Prefix for output files
+
+## Additional Inputs
+- A manifest file (`/data/databases/taxid_list`) containing the TaxIDs of interest.
+
+## Variables
+- The script uses various variables related to Kraken and Bracken reports.
+
+## Output
+- The script generates two output files:
+  - `kr_reports_modified/<prefix>_virallist_report.kraken2`: Kraken2 report filtered for specified TaxIDs.
+  - `kr_reports_modified/<prefix>_virallist_report.bracken`: Bracken report filtered for specified TaxIDs.
+
+## Workflow Steps
+
+### Kraken2 Report for Specified TaxIDs
+1. **Kraken2 Report Formatting**: Prepares the Kraken2 report for the specified TaxIDs.
+2. **Iterative TaxID Filtering**: Iterates through the TaxIDs in the manifest and filters the Kraken2 report accordingly.
+
+### Bracken Report for Specified TaxIDs
+3. **Bracken Report Formatting**: Prepares the Bracken report for the specified TaxIDs.
+4. **Iterative TaxID Filtering in Bracken**: Iterates through the TaxIDs in the manifest and filters the Bracken report accordingly.
+
+## Usage
+```bash
+./kraken_summary_taxID.sh <working_directory> <R1_fastq> <R2_fastq> <output_prefix>
+```
+
+## Example Output
+- `kr_reports_modified/<prefix>_virallist_report.kraken2`
+- `kr_reports_modified/<prefix>_virallist_report.bracken`
+
+## Manifest File Format
+- The manifest file `/data/databases/taxid_list` should contain a list of TaxIDs of interest, one per line.
+
+## Notes
+- Review and modify the paths and variables in the script to match your system.
+- This script provides detailed taxonomic summaries for specific TaxIDs using Kraken2 and Bracken.
